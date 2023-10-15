@@ -1,8 +1,8 @@
+pandas==1.5.3
 streamlit
+scikit-learn
 sklearn
-pandas
 matplotlib
 numpy
-scikit-learn
 xgboost
 seaborn
