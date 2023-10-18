@@ -55,7 +55,5 @@ if st.button('Predict Cost'):
     ppi = ((X_res**2) + (Y_res**2))**0.5/screen_size
     query = np.array([company,type,ram,weight,touchscreen,ips,ppi,cpu,hdd,ssd,gpu,os] ,dtype=object)
     query = query.reshape(1,12)
-    st.title("The predicted price of this configuration is " + str(int(np.exp(pipe.predict(query)[0]))))
-    
-    
-st.success("Successfully Predicted!!")
+    st.title("The predicted price of this configuration is " + str(int(np.exp(pipe.predict(query)[0]))))  
+    st.success("Successfully Predicted!!")
