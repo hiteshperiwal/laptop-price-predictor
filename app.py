@@ -16,7 +16,7 @@ type = st.selectbox('Type',df['TypeName'].unique())
 ram = st.selectbox('RAM(in GB)',[2,4,6,8,12,16,24,32,64])
 
 # weight
-weight = st.number_input('Weight of the Laptop')
+weight = st.number_input('Weight of the Laptop(in KGs)')
 
 # Touchscreen
 touchscreen = st.selectbox('Touchscreen',['No','Yes'])
@@ -56,3 +56,6 @@ if st.button('Predict Cost'):
     query = np.array([company,type,ram,weight,touchscreen,ips,ppi,cpu,hdd,ssd,gpu,os] ,dtype=object)
     query = query.reshape(1,12)
     st.title("The predicted price of this configuration is " + str(int(np.exp(pipe.predict(query)[0]))))
+    
+    
+st.success("Successfully Predicted!!")
